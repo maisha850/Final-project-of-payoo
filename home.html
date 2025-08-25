@@ -15,14 +15,15 @@
     />
 </head>
 <body >
-   <main class="flex justify-center items-center">
+   <main class="flex justify-center items-center  ">
      <!-- balance -->
-    <div class=" h-[100vh] bg-[#F4F5F7] p-6">
-     <div class="flex justify-between items-center gap-32">
+    <div class=" bg-[#F4F5F7]">
+ <div class="bg-white  p-6 ">
+      <div class="flex justify-between items-center gap-32">
             <div class="flex items-center">
         <img class="w-[50px]" src="assets/Group.png" alt="">
         <div>
-            <h3 class="font-bold text-lg">$ <span>45000</span></h3>
+            <h3  class="font-bold text-lg">$ <span id="money">45000</span></h3>
             <p class="text-gray-500">Available Balance</p>
         </div>
      </div>
@@ -38,42 +39,42 @@
      </div>
      <!-- btn -->
 <div class="grid grid-cols-3 gap-3 mt-8">
-    <div class="w-[123px] h-[86px] border border-gray-400 rounded-lg pt-4 ">
+    <div id="add-money" class="w-[123px] h-[86px] border border-gray-400 rounded-lg pt-4 ">
   <div class="flex justify-center items-center flex-col gap-2">
       <img src="assets/wallet1.png" alt="">
     <p class="text-[#080808] opacity-70">Add money</p>
 
   </div>
 </div>
-<div class="w-[123px] h-[86px] border border-gray-400 rounded-lg pt-4">
+<div id="cashOut-bttn" class="w-[123px] h-[86px] border border-gray-400 rounded-lg pt-4">
   <div class="flex justify-center items-center flex-col gap-2">
       <img src="assets/money1.png" alt="">
     <p class="text-[#080808] opacity-70">Cash Out</p>
 
   </div>
 </div>
-<div class="w-[123px] h-[86px] border border-gray-400 rounded-lg pt-4 ">
+<div class="w-[123px] h-[86px] border border-gray-400 rounded-lg pt-4 hidden">
   <div class="flex justify-center items-center flex-col gap-2">
       <img src="assets/send1.png" alt="">
     <p class="text-[#080808] opacity-70">Transfer Money</p>
 
   </div>
 </div>
-<div class="w-[123px] h-[86px] border border-gray-400 rounded-lg pt-4 ">
+<div class="w-[123px] h-[86px] border border-gray-400 rounded-lg pt-4 hidden">
   <div class="flex justify-center items-center flex-col gap-2">
       <img src="assets/bonus1.png" alt="">
     <p class="text-[#080808] opacity-70">Get Bonus</p>
 
   </div>
 </div>
-<div class="w-[123px] h-[86px] border border-gray-400 rounded-lg pt-4">
+<div class="w-[123px] h-[86px] border border-gray-400 rounded-lg pt-4 hidden">
   <div class="flex justify-center items-center flex-col gap-2">
       <img src="assets/purse1.png" alt="">
     <p class="text-[#080808] opacity-70">Pay Bill</p>
 
   </div>
 </div>
-<div class="w-[123px] h-[86px] border border-gray-400 rounded-lg pt-4">
+<div id="transactionBTn" class="w-[123px] h-[86px] border border-gray-400 rounded-lg pt-4 ">
   <div class="flex justify-center items-center flex-col gap-2">
       <img src="assets/transaction1.png" alt="">
     <p class="text-[#080808] opacity-70">Transactions</p>
@@ -81,10 +82,92 @@
   </div>
 </div>
 </div>
-    
+
+ </div>
+<!-- input -->
+ <!-- add money -->
+
+   <div id="add-money-form" class="px-8 mb-[128px] hidden ">
+    <div class="flex flex-col gap-2 mt-8 w-full">
+    <h3 class="font-semibold text-lg">Add Money</h3>
+      <div class=" card bg-base-100  max-w-sm shrink-0 shadow-md w-full  rounded-xl">
+         
+      <div class="card-body">
+       
+        <fieldset class="fieldset ">
+         
+           <h3 class=" font-medium text-[16px] text-[#080808] opacity-80">Select Bank</h3>
+          <select name="
+          " id="" class="bg-[#F4F5F7] rounded-3xl border-none p-2 text-lg">
+          
+        <option value="">Ab Bank</option>
+        <option value="">IFIC Bank</option>
+        <option value="">City Bank</option>
+        <option value="">NCC Bank</option>
+      </select>
+           <label class="label font-medium text-[16px] text-[#080808] opacity-80 ">Bank Account Number</label>
+          <input id="input-num" type="text" class="input  bg-[#F4F5F7] rounded-3xl border-none" placeholder="Enter 11 digit account number" />
+          <label class="label font-medium text-[16px] text-[#080808] opacity-80">Amount to Add</label>
+          <input id="input-amount" type="text" class="input  bg-[#F4F5F7] rounded-3xl border-none" placeholder="Add amount to withdraw" />
+          <label class="label font-medium text-[16px] text-[#080808] opacity-80 ">4 digit PIN</label>
+          <input id="input-pin" type="password" class="input bg-[#F4F5F7] rounded-3xl  border-none" placeholder="Enter 4 digit PIN" />
+          <div><a class="link link-hover">Forgot password?</a></div>
+          <button id="add-btn" class="btn btn-neutral mt-4 bg-blue-500 border-none text-white rounded-3xl">Add Money</button>
+        </fieldset>
+      </div>
+    </div>
+   </div>
+
+   </div>
+ <p id="show-transaction1" class="hidden"></p>
+   <!-- Cash out -->
+    <div id="cahout-form" class="px-8 mb-[128px] hidden" >
+    <div class="flex flex-col gap-2 mt-8 w-full">
+    <h3 class="font-semibold text-lg">Cash Out</h3>
+      <div class=" card bg-base-100  max-w-sm shrink-0 shadow-md w-full  rounded-xl">
+         
+      <div class="card-body">
+       
+        <fieldset class="fieldset ">
+         
+           <h3 class=" font-medium text-[16px] text-[#080808] opacity-80">Select Bank</h3>
+          <select name="
+          " id="" class="bg-[#F4F5F7] rounded-3xl border-none p-2 text-lg">
+          
+        <option value="">Ab Bank</option>
+        <option value="">IFIC Bank</option>
+        <option value="">City Bank</option>
+        <option value="">NCC Bank</option>
+      </select>
+           <label class="label font-medium text-[16px] text-[#080808] opacity-80 ">Bank Account Number</label>
+          <input id="input-num2" type="text" class="input  bg-[#F4F5F7] rounded-3xl border-none" placeholder="Enter 11 digit account number" />
+          <label class="label font-medium text-[16px] text-[#080808] opacity-80">Amount to Withdraw</label>
+          <input id="cashout-amount" type="text" class="input  bg-[#F4F5F7] rounded-3xl border-none" placeholder="Enter amount to withdraw" />
+          <label class="label font-medium text-[16px] text-[#080808] opacity-80 ">4 digit PIN</label>
+          <input id="cashout-pin" type="password" class="input bg-[#F4F5F7] rounded-3xl  border-none" placeholder="Enter 4 digit PIN" />
+          <div><a class="link link-hover">Forgot password?</a></div>
+          <button id="cash-btn" class="btn btn-neutral mt-4 bg-blue-500 border-none text-white rounded-3xl">Cash Out</button>
+        </fieldset>
+       
+      </div>
+    </div>
+   </div>
+
+   </div>
+  <div id="transactions" class=" pl-6 mt-3 hidden mb-4">
+     <h3 class="font-bold text-2xl mb-2">Transaction History</h3>
+    <p  id="show-transaction">
+
+    </p>
+
+  </div>
      </div>
     
    </main>
+   <script src="js/utility.js"></script>
+   <script src="addmoney.js"></script>
+   <script src="js/cahout.js"></script>
+   <script src="js/showTransaction.js"></script>
     
 </body>
 </html>
